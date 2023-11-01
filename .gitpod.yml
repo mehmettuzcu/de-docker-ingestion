@@ -1,0 +1,4 @@
+tasks:
+  - name: docker
+    before: |
+      source ./bin/install_docker
