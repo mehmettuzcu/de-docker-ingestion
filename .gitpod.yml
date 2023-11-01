@@ -2,3 +2,4 @@ tasks:
   - name: docker
     before: |
       source ./bin/install_docker
+      source ./bin/docker-login
