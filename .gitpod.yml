@@ -3,3 +3,8 @@ tasks:
     before: |
       source ./bin/install_docker
       source ./bin/docker-login
+      source .bin/install-python
+
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
