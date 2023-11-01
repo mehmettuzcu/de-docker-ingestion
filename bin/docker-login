@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Log in to Docker Hub
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+# Set up Docker credential helper
+docker-credential-secretservice store < <(echo -e "protocol=https\nhost=index.docker.io\nusername=your_docker_username\npassword=your_docker_password")
+
+# Create a symbolic link to persist Docker configuration outside the workspace
+mkdir -p /workspace/shared/.docker
+ln -s ~/.docker/config.json /workspace/shared/.docker/config.json
