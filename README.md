@@ -140,3 +140,22 @@ docker logout
         "auths": {}
 }
 ```
+
+[AzureNamingTool](https://github.com/mspnp/AzureNamingTool/wiki#installation)
+
+
+```sh
+git clone https://github.com/mspnp/AzureNamingTool.git
+```
+
+```sh
+cd AzureNamingTool/src/
+```
+
+```sh
+docker build -t azurenamingtool .
+```
+
+```sh
+docker run -d -p 8081:80 --mount source=azurenamingtoolvol,target=/app/settings azurenamingtool:latest
+```
